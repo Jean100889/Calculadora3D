@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JP3DTechBR - Produtos</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/produtos.css" />
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="header">
+            <div class="header-nav">
+                <a href="index.html" class="btn-voltar">&#8592; Calculadora</a>
+            </div>
+            <h1>JP3DTechBR</h1>
+            <p>Produtos Cadastrados</p>
+        </header>
+
+        <section class="card controles">
+            <div class="controles-linha">
+                <input id="busca" type="text" placeholder="Buscar por nome..." />
+                <select id="filtroCategoria">
+                    <option value="">Todas as categorias</option>
+                </select>
+                <button class="btn-atualizar" onclick="carregarProdutos()">Atualizar</button>
+            </div>
+        </section>
+
+        <div id="estadoLoading" class="estado">Carregando produtos...</div>
+        <div id="estadoVazio" class="estado" style="display:none">Nenhum produto encontrado.</div>
+        <div id="estadoErro" class="estado erro" style="display:none"></div>
+
+        <div id="listaProdutos" class="lista-produtos"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/produtos.js"></script>
+</body>
+
+</html>
