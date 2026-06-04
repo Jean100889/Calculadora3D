@@ -8,7 +8,7 @@
             var resultado = await window.supabaseService.client
                 .from(window.supabaseService.TABELA)
                 .select("*")
-                .order("created_at", { ascending: false });
+                .order("criado_em", { ascending: false });
 
             if (resultado.error) throw resultado.error;
 
@@ -69,8 +69,8 @@
     }
 
     function criarCard(p) {
-        var dataCadastro = p.created_at
-            ? new Date(p.created_at).toLocaleDateString("pt-BR")
+        var dataCadastro = p.criado_em
+            ? new Date(p.criado_em).toLocaleDateString("pt-BR")
             : "—";
 
         var fotoHtml = p.foto_url
