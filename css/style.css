@@ -141,6 +141,7 @@ body {
 }
 
 .field input,
+.field select,
 #foto {
     width: 100%;
     padding: 13px 15px;
@@ -155,12 +156,14 @@ body {
 }
 
 .field input:hover,
+.field select:hover,
 #foto:hover {
     border-color: #a5b4fc;
     background: var(--white);
 }
 
 .field input:focus,
+.field select:focus,
 #foto:focus {
     border-color: var(--blue);
     background: var(--white);

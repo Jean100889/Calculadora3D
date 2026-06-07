@@ -38,8 +38,93 @@
         <div id="listaProdutos" class="lista-produtos"></div>
     </main>
 
+    <!-- Modal de edição -->
+    <div id="modalOverlay" class="modal-overlay" style="display:none" onclick="fecharModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+
+            <div class="modal-header">
+                <h3>Editar Produto</h3>
+                <button class="modal-fechar" onclick="fecharModal()">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div class="field">
+                        <label>Nome da peça</label>
+                        <input id="editNome" type="text" />
+                    </div>
+                    <div class="field">
+                        <label>Categoria</label>
+                        <input id="editCategoria" type="text" />
+                    </div>
+                    <div class="field">
+                        <label>Peso (g)</label>
+                        <input id="editPeso" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Tempo de impressão (h)</label>
+                        <input id="editTempo" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Valor filamento/kg</label>
+                        <input id="editFilamento" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Perda / purga (%)</label>
+                        <input id="editPerda" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Consumo impressora (W)</label>
+                        <input id="editWatts" type="number" />
+                    </div>
+                    <div class="field">
+                        <label>Valor kWh</label>
+                        <input id="editKwh" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Acessório</label>
+                        <input id="editAcessorio" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Embalagem</label>
+                        <input id="editEmbalagem" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Acabamento</label>
+                        <input id="editAcabamento" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Valor impressora</label>
+                        <input id="editImpressora" type="number" step="0.01" />
+                    </div>
+                    <div class="field">
+                        <label>Vida útil (h)</label>
+                        <input id="editVidaUtil" type="number" />
+                    </div>
+                    <div class="field">
+                        <label>Margem de lucro (%)</label>
+                        <select id="editMargem"></select>
+                    </div>
+                    <div class="field">
+                        <label>Comissão vendedor (%)</label>
+                        <input id="editComissao" type="number" step="0.01" />
+                    </div>
+                </div>
+            </div>
+
+            <p id="modalStatus"></p>
+
+            <div class="modal-footer">
+                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                <button id="btnSalvarEdicao" class="btn-salvar-modal" onclick="salvarEdicao()">Salvar alterações</button>
+            </div>
+
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase.js"></script>
+    <script src="js/calculadora.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/produtos.js"></script>
 </body>
